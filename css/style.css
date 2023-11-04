@@ -35,6 +35,10 @@ body{
 ::before,::after{
   box-sizing: border-box;
 }
+h3,.contact-sub-title{
+color: var(--text-black-900);
+
+}
 
 ul{
   list-style: none;
@@ -442,6 +446,9 @@ h3.my-profession{
   height: 100%;
   border-radius: 5px;
   background-color: var(--skin-color);
+  animation: fillBars 0.3s 1;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
 }
 
 .about .about-content .skills .skill-item .progress .skill-percent{
@@ -963,4 +970,15 @@ font-size: 1rem;
      flex: 0 0 100%;
      max-width: 100%;
    }
+}
+
+
+@keyframes fillBars {
+  from {
+    width: 0;
+  }
+  to{
+    max-width: 100%;
+  }
+
 }

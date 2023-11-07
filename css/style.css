@@ -21,7 +21,7 @@ body.dark{
 body{
   line-height: 1.5;
   font-size: 1rem;
-  font-family: 'Poppins' , sans-serif;
+  font-family: 'Roboto Thin' , sans-serif;
 }
 
 *{
@@ -30,6 +30,8 @@ body{
   outline: 0;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: 'Roboto Thin' , sans-serif;
+
 }
 
 ::before,::after{
@@ -45,25 +47,12 @@ ul{
 }
 
 .section{
+  position: relative;
   background: var(--bg-black-900);
   min-height: 100vh;
   display: block;
   padding: 0 1.875rem;
-  /*opacity: 1;*/
-  /*position: fixed;*/
-  /*left: 270px;*/
-  /*right: 0;*/
-  /*top: 0;*/
-  /*bottom: 0;*/
-  /*z-index: 0;*/
-  /*overflow-y: auto;*/
-  /*overflow-x:hidden;*/
-}
 
-.section .active{
-  z-index: 2;
-  opacity: 1;
-  animation: slideSection 1s ease;
 }
 
 .section.back-section{
@@ -85,6 +74,14 @@ ul{
   padding-right: 1rem;
 }
 
+.padd-top{
+  padding-top: 1rem;
+}
+
+.padd-top-s{
+  padding-top: 0.3rem;
+}
+
 .container{
   max-width: 1100px;
   width: 100%;
@@ -103,6 +100,8 @@ ul{
 }
 .section-title h2{
   font-size: 40px;
+  font-family: 'Roboto Thin' , sans-serif;
+
   color: var(--text-black-900);
   font-weight: 700;
   position: relative;
@@ -267,7 +266,7 @@ ul{
 }
 
 .nav{
-  margin-top: 8rem;
+  margin-top: 13rem;
 }
 
 .nav li{
@@ -405,7 +404,11 @@ margin-top: 3rem;
 .about .about-content .about-text p {
   font-size: 1rem;
   line-height: 25px;
+  font-family: "Roboto Thin",sans-serif;!important;
+  font-weight: 300;
   color: var(--text-black-700);
+  padding: 0 5px;
+
 }
 
 .about .about-content .personal-info{
@@ -535,6 +538,7 @@ margin-top: 3rem;
   position: relative;
   padding-left: 37px;
   padding-bottom: 3.125rem;
+
 }
 
 
@@ -548,6 +552,11 @@ margin-top: 3rem;
   position: absolute;
   left: 7px;
   background-color: var(--skin-color);
+  animation: timelineanimation 0.5s 1;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+
+
 }
 
 .about .about-content .timeline .timeline-item .circle-dot{
@@ -581,11 +590,14 @@ margin-top: 3rem;
 }
 
 .about .about-content .timeline .timeline-text{
-line-height: 1.563rem;
+line-height: 1.2rem;
   font-size: 1rem;
   text-align: left;
   color: var(--text-black-700) ;
 }
+
+
+
 
 /* service*/
 
@@ -653,12 +665,18 @@ font-size: 1rem;
 .portfolio .porfolio-heading h2{
   font-family: "Clicker Script", cursive;
   font-weight: 500;
+  color: var(--text-black-700);
 }
 
 .portfolio .portfolio-item{
   flex: 0 0 33.33%;
   max-width: 33.33%;
   margin-bottom: 30px;
+}
+
+.portfolio .portfolio-item:hover{
+  transition: 0.8s ease-in-out;
+  transform: scale(1.1);
 }
 
 .portfolio .portfolio-item-inner {
@@ -950,7 +968,9 @@ font-size: 1rem;
 
 @media(max-width: 991px) {
 
-
+.laptop-img{
+  width: 100%;
+}
 
   .portfolio .portfolio-item,
   .contact.portfolio-item,
@@ -1023,4 +1043,13 @@ font-size: 1rem;
     max-width: 100%;
   }
 
+}
+
+@keyframes timelineanimation {
+  from {
+    height: 0;
+  }
+  to{
+    max-height: 100%;
+  }
 }

@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function (){
   });
 })
 
-
+//nav section
+//
 document.addEventListener("DOMContentLoaded", function() {
   const navLinks = document.querySelectorAll('.nav-link');
 
@@ -32,4 +33,78 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+
+
+//aside
+
+
+const navToggler = document.querySelector('.nav-toggler');
+const nav = document.querySelector('.aside');
+
+let isNavOpen = false;
+
+// Funktion zum Öffnen der Navigation
+function openNav() {
+
+  nav.style.transition = '0.5s'; // Füge eine Übergangsanimation hinzu
+  nav.style.transform = 'translateX(0)';
+  nav.style.display = 'block';
+  isNavOpen = true;
+}
+
+// Funktion zum Schließen der Navigation
+function closeNav() {
+
+  nav.style.transition = '0.5s'; // Füge eine Übergangsanimation hinzu
+  nav.style.transform = 'translateX(-100%)';
+  nav.style.display = 'none';
+  isNavOpen = false;
+}
+
+// Event-Handler für den Klick auf den Toggler
+navToggler.addEventListener('click', () => {
+  if (isNavOpen) {
+    closeNav(); // Navigation ist geöffnet, schließen
+  } else {
+    openNav(); // Navigation ist geschlossen, öffnen
+  }
+});
+
+
+
+// const nav = document.querySelector('.nav');
+// const navList = nav.querySelectorAll('li');
+// allSection = document.querySelectorAll('.section')
+// const totalNavList = navList.length;
+// totalSection = allSection.length
+//
+// for (let i = 0; i < totalNavList; i++)
+// {
+//   const a = navList[i].querySelector('a');
+//   a.addEventListener('click', function ()
+//   {
+//
+//     for (let j = 0; j < totalNavList; j++) {
+//    if(navList[j].querySelector('a').classList.contains('active'))
+//     {
+//
+//      allSection[j].classList.add('back-section');
+//     }
+//     navList[j].querySelector('a').classList.remove('active');
+//     }
+//     this.classList.add('active');
+//     showSection(this);
+//   });
+// }
+//
+// function showSection(element) {
+//
+//   for(let i=0; i<totalNavList; i++){
+//     allSection[i].classList.remove()
+//   }
+//
+//   const target = element.getAttribute('href').split('#')[1];
+//   document.querySelector('#' + target).classList.add('active');
+// }
 

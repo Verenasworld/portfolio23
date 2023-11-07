@@ -81,15 +81,15 @@ display: flex;
 }
 
 .style-switcher .colors .color-1{
-  background-color: #1862ec;
+  background-color: hsl(120, 100%, 50%);
 }.style-switcher .colors .color-2{
-  background-color: #18daec;
+  background-color: hsl(312, 100%, 50%);
 }.style-switcher .colors .color-3{
-  background-color: #c518ec;
+  background-color: hsl(1, 100%, 50%);
 }.style-switcher .colors .color-4{
-  background-color: #77ec18;
+  background-color: hsl(190, 100%, 50%);
 }.style-switcher .colors .color-5{
-  background-color: #ec1862;
+  background-color: hsl(212, 100% ,50%);
 }
 
 

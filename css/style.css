@@ -22,6 +22,7 @@ body{
   line-height: 1.5;
   font-size: 1rem;
   font-family: 'Roboto Thin' , sans-serif;
+
 }
 
 *{
@@ -36,6 +37,24 @@ body{
 
 ::before,::after{
   box-sizing: border-box;
+}
+
+
+.bubble:before {
+  content: '';
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 20%;
+  background: var(--skin-color);
+  opacity: 0.5;
+
+  animation: rotateBefore 8s infinite linear;
+}
+@keyframes rotateBefore {
+  0% { transform: rotate(-2turn); }
 }
 h3,.contact-sub-title{
 color: var(--text-black-900);
@@ -339,8 +358,14 @@ h3.my-profession{
   max-width: 40%;
   text-align: center;
   position: relative;
+  animation: fadeIn 7s;
 
 }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 .home-img::before{
   content: '';
@@ -507,8 +532,9 @@ margin-top: 3rem;
 .about .about-content .experience{
   flex: 0 0 50%;
   max-width: 50%;
-  margin-top: 1.875rem;
+  margin-top: 1.875rem
 }
+
 
 .about .about-content h3.title{
 
@@ -671,13 +697,20 @@ font-size: 1rem;
 .portfolio .portfolio-item{
   flex: 0 0 33.33%;
   max-width: 33.33%;
+  width: 100%;
+  height: auto;
   margin-bottom: 30px;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
-.portfolio .portfolio-item:hover{
-  transition: 0.8s ease-in-out;
-  transform: scale(1.1);
+.portfolio-container{
+opacity: 1;
+  position: relative;
+  width: 50%;
 }
+
 
 .portfolio .portfolio-item-inner {
   border: 6px solid var(--bg-black-100);
@@ -687,12 +720,28 @@ font-size: 1rem;
 
 }
 
+
 .portfolio .portfolio-img{
   object-fit: cover;
   overflow: hidden;
   width:  1000% ;
-  display: block;
+
 }
+
+.portfolio .portfolio-img:hover{
+  transition: 0.8s ease-in-out;
+  transform: scale(1.02);
+
+}
+
+/*BLOG*/
+
+.card{
+  background-color: var(--skin-color);
+}
+
+
+
 
 /*contact*/
 

@@ -33,6 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("scroll", function() {
+  const pageTop = window.scrollY;
+  const pageBottom = pageTop + window.innerHeight;
+  const tags = document.querySelectorAll(".education");
+
+  tags.forEach(tag => {
+    if (tag.getBoundingClientRect().top < pageBottom) {
+      tag.classList.add("visible");
+    } else {
+      tag.classList.remove("visible");
+    }
+  });
+});
+
 
 
 
